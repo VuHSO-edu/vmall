@@ -1,6 +1,6 @@
 spring:
   application:
-    name: vmall_mall_service
+    name: vmall-mall-service
   datasource:
     url: jdbc:mysql://localhost:3307/vmall_mall_service
     username: root

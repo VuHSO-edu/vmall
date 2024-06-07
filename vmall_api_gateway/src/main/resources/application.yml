@@ -1,9 +1,17 @@
 spring:
   application:
-    name: vmall_api_gateway
-
+    name: vmall-api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: vmall-mall-service
+          uri: lb://vmall-mall-service
+          predicates:
+            - Path=/mall/**
+          filters:
+            - RewritePath=/mall/(?<segment>.*), /$\{segment}
 server:
-  port: 0
+  port: 8088
 
 eureka:
   client:
